@@ -13,7 +13,8 @@ mkdir -p $outdir
 
 ## Quality Control ##
 
-#FastQC - for visualising the quality
+#MultiQC - for visualising the quality
+python QC_Eval()
 #Trimmomatic
 
 ## Alignment ##
