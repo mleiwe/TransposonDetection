@@ -5,9 +5,6 @@
 #First argument is the forward read and the second is the reverse read
 forward_read=$1
 reverse_read=$2
-stem=$(basename "$forward_read" | cut -d_ -f1-2)  # This is the stem
-
-
 
 # Second Argument is the output directory
 #outdir = $1
@@ -19,36 +16,17 @@ fastqc $forward_read -o ./Reports
 fastqc $reverse_read -o ./Reports
 
 ## Trimmomatic ##
-# Filenames
-forward_out_pairs="$stem"_R1_trimmed.fastq""
-forward_out_orphan="$stem"_R1_trimmed_unpaired.fastq""
-reverse_out_pairs="$stem"_R2_trimmed.fastq""
-reverse_out_orphan="$stem"_R2_trimmed_unpaired.fastq""
 # ILLUMINACLIP parameters
-# NB I have no sequence adapters from Illumina, so I will skip
-#adapter_file = "SRR_adapters.fa"
+# NB I have no sequence adapters from Illumina, so I will skip for now, can be added in at a later date
 
 # SLIDINGWINDOW parameters
-window_size=10
+window_size=5
 window_phred=30
 
 # MINLEN - the minimum length for a read to be included
-min_length=5
+min_length=5 
 
-#trimmomatic PE -threads 4 -phred33 -trimlog ./Reports/trimlog -summary ./Reports/trimmometric_summary \
- #$forward_read $reverse_read $forward_out_pairs $forward_out_orphan $reverse_out_pairs $reverse_out_orphan \
- #SLIDINGWINDOW:$window_size:$window_phred MINLEN:$min_length
-trimmomatic PE -threads 4 \
- $forward_read $reverse_read "output_R1_trimmed_paired.fastq" "output_R1_trimmed_unpaired.fastq" "$stem"_R2_trimmed_paired.fastq"" "$stem"_R2_trimmed_unpaired.fastq"" \
- SLIDINGWINDOW:$window_size:$window_phred MINLEN:$min_length
-#-baseout $forward_out_pairs $forward_out_orphan $reverse_out_pairs $reverse_out_orphan \
-
-# Move the output files to a trimmed files folder and perform FastQC
-mkdir TrimmedFastq
-mv *_trimmed* ./TrimmedFastq
-cd TrimmedFastq
-fastqc ./*.fastq -o ../Reports
-cd ..
+./Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
 
 ## Alignment ##
 #Minimum read length of 25bp?
