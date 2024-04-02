@@ -24,5 +24,13 @@ hisat2 -x $HISAT2_INDEX -1 $READ1 -2 $READ2 --new-summary --summary-file ./Repor
 
 # Sort by coordinates
 samtools sort -o $OUTPUT_DIR/alignment.sort.bam $OUTPUT_DIR/alignment.bam 
+rm $OUTPUT_DIR/alignment.bam
+
+#generate the index
+samtools index  $OUTPUT_DIR/alignment.sort.bam
+
+#flag stats
+samtools flagstat $OUTPUT_DIR/alignment.sort.bam > ./Reports/samtools_flagstats.json
+
 
 
