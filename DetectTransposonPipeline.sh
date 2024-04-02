@@ -29,8 +29,11 @@ min_length=5
 ./Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
 
 ## Alignment ##
-#Minimum read length of 25bp?
-# BWA, SAM tools?
+# hisat2 alignment
+echo "Running the alignment script"
+./Alignment.sh ./Reads/*_R1_trimmed*.fastq ./Reads/*_R2_trimmed*.fastq ./ReferenceGenome
+
+# SAM tools?
 #ref_folder = $3
 # Save bam file
 
