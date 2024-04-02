@@ -1,6 +1,5 @@
 #!/bin/bash
 # Arguments: $1-Forward_Read $2-Reverse_Read $3-window_size $4-window_phred $5-minimum_length
-./PracticeTest.sh
 
 forward_read=$1
 reverse_read=$2
@@ -34,8 +33,8 @@ trimmomatic PE -threads 4 \
  SLIDINGWINDOW:$window_size:$window_phred MINLEN:$min_length
 
 # Move the output files to a trimmed files folder and perform FastQC
-mkdir TrimmedFastq
-mv *_trimmed* ./TrimmedFastq
-cd TrimmedFastq
+mkdir Reads
+mv *_trimmed* ./Reads
+cd Reads
 fastqc ./*.fastq -o ../Reports #Performs FastQC on the new fastq files and adds them to the Reports folder
 cd .. #Return back to the home directory

@@ -1,6 +1,6 @@
 RawData/
 multiqc_data/
-Reference genome/
+ReferenceGenome/
 Reports/
-TrimmedFastq/
+Reads/
 multiqc_report.html
