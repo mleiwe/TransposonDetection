@@ -7,7 +7,7 @@ ChkFile="./"$ReferenceFolder"/all_genomes.fsa"
 if [ -f "$ChkFile" ]; then
     echo "Reference genome exists in .fsa format, skipping index creation"
 else
-    ./SingleGenome.sh $ReferenceFolder
+    ./FilterAlignScripts/SingleGenome.sh $ReferenceFolder
 fi
 
 #Alignment - This produces a SAM file
