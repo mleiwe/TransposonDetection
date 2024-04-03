@@ -3,7 +3,7 @@ NB Under construction
 Test Repository for detecting transposons from FastQ files.
 
 ## Pipeline Walkthrough
-There are four stages for this pipeline: QC, Trimming, Alignment, and finally Transposon Detection. It makes the assumption that this is paired end data. NB Due to conflicts in dependencies the pipeline is split in two, the first portion (Filter_Align.sh uses the environment `alignment_environment.yml` for conda or `alignment_requirements.txt`.
+There are four stages for this pipeline: QC, Trimming, Alignment, and finally Transposon Detection. It makes the assumption that this is paired end data. NB Due to conflicts in dependencies the pipeline is split in two, the first portion (`FilterAlign.sh` uses the environment `alignment_environment.yml` for conda or `alignment_requirements.txt`.
 ### QC --> Alignment
 #### Quality Control
 * A fastq file will be evaluated to search for the Phred Score quality.
