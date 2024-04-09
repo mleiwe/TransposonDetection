@@ -26,28 +26,18 @@ window_phred=30
 # MINLEN - the minimum length for a read to be included
 min_length=5 
 
-./Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
+./FilterAlignScripts/Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
 
 ## Alignment ##
 # hisat2 alignment
 echo "Running the alignment script"
-./Alignment.sh ./Reads/*_R1_trimmed*.fastq ./Reads/*_R2_trimmed*.fastq ./ReferenceGenome
-
-# SAM tools?
-#ref_folder = $3
-# Save bam file
+./FilterAlignScripts/Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
 
 ## Post-processing ## 
 # Remove PCR duplicates - picard(?)
-# Sorting - Sort according to genomic position - samtools
-# Indexing - Allows for efficient access - samtools
 
-## Transposon Detection
-#MultiQC - for visualising the quality
-#python QC_Eval()
+## Summary QC for pipeline ##
 multiqc ./Reports
-
-
 
 
 
