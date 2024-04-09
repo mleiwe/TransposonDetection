@@ -31,8 +31,9 @@ min_length=5
 ## Alignment ##
 # hisat2 alignment
 echo "Running the alignment script"
-./FilterAlignScripts/Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
+#./FilterAlignScripts/Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
 
+./FilterAlignScripts/BWA_Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
 ## Post-processing ## 
 # Remove PCR duplicates - picard(?)
 
