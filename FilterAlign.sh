@@ -29,18 +29,12 @@ min_length=5
 ./FilterAlignScripts/Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
 
 ## Alignment ##
-# hisat2 alignment
+# bwa-mem2 alignment
 echo "Running the alignment script"
-#./FilterAlignScripts/Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
 
 ./FilterAlignScripts/BWA_Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
 ## Post-processing ## 
-# Remove PCR duplicates - picard(?)
+# Remove PCR duplicates - picard(?) - To be added later
 
 ## Summary QC for pipeline ##
 multiqc ./Reports
-
-
-
-
-

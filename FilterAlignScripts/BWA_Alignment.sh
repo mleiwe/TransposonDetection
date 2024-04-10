@@ -26,6 +26,9 @@ OUTPUT_DIR="./Reads"
 samtools sort -o $OUTPUT_DIR/alignment_bwamem2.sort.bam $OUTPUT_DIR/alignment_bwamem2.bam 
 rm $OUTPUT_DIR/alignment_bwamem2.bam
 
+#MQ tag
+picard FixMateInformation I=./Reads/alignment_bwamem2.sort.bam
+
 #generate the index
 samtools index  $OUTPUT_DIR/alignment_bwamem2.sort.bam
 
