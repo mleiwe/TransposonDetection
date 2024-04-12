@@ -25,7 +25,7 @@ window_phred=30
 
 # MINLEN - the minimum length for a read to be included
 min_length=5 
-
+mkdir ./Reports
 ./FilterAlignScripts/Trimming.sh $forward_read $reverse_read $window_size $window_phred $min_length
 
 ## Alignment ##
