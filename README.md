@@ -124,9 +124,15 @@ Here run the script including the forward and reverse reads
 
 # Citations required if the tool is used
 INSurVeyor: Rajaby, R., Liu, DX., Au, C.H. et al. INSurVeyor: improving insertion calling from short read sequencing data. Nat Commun 14, 3243 (2023). https://doi.org/10.1038/s41467-023-38870-2
+
 samtools: Danecek P, Bonfield JK, Liddle J, Marshall J, Ohan V, Pollard MO, Whitwham A, Keane T, McCarthy SA, Davies RM, Li H, Twelve years of SAMtools and BCFtools, GigaScience (2021) 10(2) giab008 [33590861](https://pubmed.ncbi.nlm.nih.gov/33590861/)
+
 Picard: http://broadinstitute.github.io/picard/
+
 Trimmomatic: Bolger, A. M., Lohse, M., & Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.
+
 Fastqc: Andrews, S. (2010). FastQC:  A Quality Control Tool for High Throughput Sequence Data. http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
 Multiqc: MultiQC: Philip Ewels, Måns Magnusson, Sverker Lundin, Max Käller, Bioinformatics, Volume 32, Issue 19, October 2016, Pages 3047–3048, https://doi.org/10.1093/bioinformatics/btw3542196507
+
 vcf2tsvpy: https://github.com/sigven/vcf2tsvpy
