@@ -29,8 +29,11 @@ rm $OUTPUT_DIR/alignment_bwamem2.bam
 #MQ tag
 picard FixMateInformation I=./Reads/alignment_bwamem2.sort.bam
 
-#generate the index
-samtools index  $OUTPUT_DIR/alignment_bwamem2.sort.bam
-
-#flag stats
+#alignment qc with samtools and picard
 samtools flagstat $OUTPUT_DIR/alignment_bwamem2.sort.bam > ./Reports/samtools_flagstats.json
+samtools stats $OUTPUT_DIR/alignment_bwamem2.sort.bam > ./Reports/samtools_stats.json
+picard MarkDuplicates I=./Reads/alignment_bwamem2.sort.bam  O=./Reads/alignment_bwamem2_md.sort.bam M=./Reports/marked_duplicates_metrics.txt
+rm $OUTPUT_DIR/alignment_bwamem2.sort.bam
+
+#Index after marked duplicates
+samtools index  $OUTPUT_DIR/alignment_bwamem2_md.sort.bam

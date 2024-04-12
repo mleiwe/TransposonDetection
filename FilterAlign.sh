@@ -31,10 +31,10 @@ min_length=5
 ## Alignment ##
 # bwa-mem2 alignment
 echo "Running the alignment script"
-
-./FilterAlignScripts/BWA_Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq ./ReferenceGenome
+GENOME_DIR=$3
+./FilterAlignScripts/BWA_Alignment.sh ./Reads/*_R1_trimmed.fastq ./Reads/*_R2_trimmed.fastq $GENOME_DIR
 ## Post-processing ## 
-# Remove PCR duplicates - picard(?) - To be added later
+# Remove PCR duplicates - picard(?) - To be added later if needed
 
 ## Summary QC for pipeline ##
 multiqc ./Reports
