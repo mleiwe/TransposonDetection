@@ -8,7 +8,7 @@ There are four stages for this pipeline: QC, Trimming, Alignment, and finally Tr
 #### Quality Control
 * Use [FastQC](https://github.com/s-andrews/FastQC) for evaluating the reads obtained, these reports will be saved in the `Reports` folder.
 #### Trimming
-* This pipeline uses Trimmomatic for trimming. Script is `Trimming.sh`.
+* This pipeline uses [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) for trimming. Script is `Trimming.sh`.
 * This evaluates both the forward (R1) and reverse (R2) reads.
 * Thresholds are tunable but currently stand as `window_size = 5`, `window_phred = 30`, and `min_length = 5`.
 * NB currently unaware of the sequence adapters so I cannot use the `ILLUMINACLIP` parameters.
