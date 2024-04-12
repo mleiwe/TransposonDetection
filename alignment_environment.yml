@@ -152,6 +152,7 @@ dependencies:
   - tapi=1100.0.11=h9ce4665_0
   - tk=8.6.13=h1abcd95_1
   - tktable=2.10=ha166976_5
+  - trimmomatic=0.39=hdfd78af_2
   - typing_extensions=4.11.0=pyha770c72_0
   - tzdata=2024a=h0c530f3_0
   - urllib3=2.2.1=pyhd8ed1ab_0
